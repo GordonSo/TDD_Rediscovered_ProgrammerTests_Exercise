@@ -24,13 +24,6 @@ class Frame(List[int]):
         return self.frame_score == 10 and len(self) == 1
 
     @property
-    def is_second_strike(self) -> bool:
-        if not self.is_last:
-            return False
-
-        return len(self) >= 2 and self[1] == 10
-
-    @property
     def is_spare(self) -> bool:
         if self.is_last:
             return sum(self[:1]) == 10 and len(self) >= 2
